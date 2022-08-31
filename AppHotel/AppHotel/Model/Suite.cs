@@ -7,16 +7,11 @@ using Xamarin.Forms;
 
 namespace AppHotel.Model
 {
-    public class Suite : ContentPage
+    public class Suite
     {
-        public Suite()
-        {
-            Content = new StackLayout
-            {
-                Children = {
-                    new Label { Text = "Welcome to Xamarin.Forms!" }
-                }
-            };
-        }
+        public string Nome { get; set; }
+        public double DiariaAdulto { get; set; }
+        public double DiariaCrianca { get; set; }
+        
     }
 }
