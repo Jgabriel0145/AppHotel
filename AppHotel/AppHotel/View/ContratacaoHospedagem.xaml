@@ -9,7 +9,7 @@
 
             <Label Text="Hospedagem" 
                    HorizontalOptions="Center"
-                   FontSize="30" TextColor="White"/>
+                   FontSize="30" TextColor="White" FontAttributes="Bold"/>
 
             <Label x:Name="lbl_usuario"
                    HorizontalTextAlignment="Center"
@@ -20,20 +20,73 @@
                    Margin="10, 0, 10, 10" Padding="20">
 
                 <StackLayout>
-                    <Grid ColumnDefinitions="*, *, 2*" RowDefinitions="*, *">
-                        <Label Grid.Column="0" Grid.Row="0" Text="Adultos: "/>
-                        <Label Grid.Row="0" Grid.Column="0" x:Name="lbl_qtd_adultos"
+                    <Grid ColumnDefinitions="1.25*, *, 2*" RowDefinitions="*, *">
+
+                        <Label Grid.Column="0" Grid.Row="0" Text="Adultos: " Margin="5"
+                               Style="{StaticResource label_contratacao_hospedagem}"/>
+                        
+                        <Label Grid.Column="1" Grid.Row="0" x:Name="lbl_qtd_adultos" Margin="5" 
+                               Style="{StaticResource label_contratacao_hospedagem}"
                                BindingContext="{x:Reference stepperAdultos}"
                                Text="{Binding Value}"/>
-                        <Stepper Grid.Row="0" Grid.Column="2" x:Name="stepperAdultos"
+                        
+                        <Stepper Grid.Column="2" Grid.Row="0" x:Name="stepperAdultos"
                                  Minimum="0" Maximum="10" Increment="1"/>
 
+                        
+
+                        <Label Grid.Column="0" Grid.Row="1" Text="Crianças: " Margin="5"
+                               Style="{StaticResource label_contratacao_hospedagem}"/>
+
+                        <Label Grid.Column="1" Grid.Row="1" x:Name="lbl_qtd_criancas" Margin="5" 
+                               Style="{StaticResource label_contratacao_hospedagem}"
+                               BindingContext="{x:Reference stepperCriancas}"
+                               Text="{Binding Value}"/>
+                        
+                        <Stepper Grid.Column="2" Grid.Row="1" x:Name="stepperCriancas"
+                                 Minimum="0" Maximum="10" Increment="1"/>
 
                     </Grid>
                 </StackLayout>
 
             </Frame>
 
+
+            <Frame BackgroundColor="#F5DEB3"
+                   CornerRadius="10"
+                   Margin="10, 0, 10, 10" Padding="20">
+
+                <Grid RowDefinitions="*,*" ColumnDefinitions="*">
+
+                    <Label Grid.Row="0" Grid.Column="0" Text="Escolha sua Suíte:" 
+                           Style="{StaticResource label_contratacao_hospedagem}"/>
+
+                    <Picker Grid.Row="1" Grid.Column="0" x:Name="pck_suite"
+                            ItemDisplayBinding="{Binding Nome}"
+                            Title="Selecione" HorizontalTextAlignment="Center"/>
+
+                </Grid>
+                
+            </Frame>
+
+            <Frame BackgroundColor="#F5DEB3"
+                   CornerRadius="10"
+                   Margin="10, 0, 10, 10" Padding="20">
+
+                <Grid RowDefinitions="*, *, *" ColumnDefinitions="*, *">
+                    <Label Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
+                        Text="Período da Estadia" 
+                        Style="{StaticResource label_contratacao_hospedagem}"/>
+
+                    <Label Text="Check-in:" Style="{StaticResource label_contratacao_hospedagem}"
+                           Grid.Column="0" Grid.Row="1"/>
+                    <DatePicker x:Name="dtpck_checkin" 
+                        Format="dd/MM/yyyy" 
+                        Grid.Column="1" Grid.Row="1"/>
+ 
+                </Grid>
+                
+            </Frame>
 
 
         </StackLayout>
