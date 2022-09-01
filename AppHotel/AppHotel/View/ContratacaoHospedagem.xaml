@@ -83,11 +83,33 @@
                     <DatePicker x:Name="dtpck_checkin" 
                         Format="dd/MM/yyyy" 
                         Grid.Column="1" Grid.Row="1"/>
- 
+
+                    
+                    
+                    <Label Text="Check-out:" Style="{StaticResource label_contratacao_hospedagem}"
+                           Grid.Column="0" Grid.Row="2"/>
+                    <DatePicker x:Name="dtpck_checkout" 
+                        Format="dd/MM/yyyy" 
+                        Grid.Column="1" Grid.Row="2"/>
                 </Grid>
-                
+          
             </Frame>
 
+
+            <Frame BackgroundColor="#F5DEB3"
+                   CornerRadius="10"
+                   Margin="10, 0, 10, 10" Padding="20">
+
+                <StackLayout>
+                    <Button Text="Calcular preço" x:Name="btnCalcularHospedagem" Clicked="btnCalcularHospedagem_Clicked"
+                        BackgroundColor="#8B4513" CornerRadius="10" TextColor="White"
+                            BorderColor="Black" BorderWidth="1"/>
+
+                    <Button Text="Sair" x:Name="btnSairCalculoHospedagem" Clicked="btnSairCalculoHospedagem_Clicked"
+                        BackgroundColor="#8B4513" CornerRadius="10" TextColor="White"
+                            BorderColor="Black" BorderWidth="1"/>
+                </StackLayout>
+            </Frame>
 
         </StackLayout>
         
