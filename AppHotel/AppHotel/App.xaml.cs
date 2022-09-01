@@ -6,7 +6,6 @@ using System.Globalization;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using AppHotel.View;
 using AppHotel.Model;
 
 namespace AppHotel
@@ -41,7 +40,12 @@ namespace AppHotel
 
             InitializeComponent();
 
-            MainPage = new ContratacaoHospedagem();
+            //MainPage = new NavigationPage(new View.ContratacaoHospedagem());
+
+            if (Properties.ContainsKey("usuario_logado"))
+                MainPage = new NavigationPage(new View.ContratacaoHospedagem());
+            else
+                MainPage = new NavigationPage(new View.Login());
         }
 
         protected override void OnStart()

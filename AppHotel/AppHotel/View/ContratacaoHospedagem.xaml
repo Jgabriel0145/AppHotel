@@ -79,15 +79,18 @@
                         Style="{StaticResource label_contratacao_hospedagem}"/>
 
                     <Label Text="Check-in:" Style="{StaticResource label_contratacao_hospedagem}"
-                           Grid.Column="0" Grid.Row="1"/>
+                            Grid.Column="0" Grid.Row="1"/>
+                    
                     <DatePicker x:Name="dtpck_checkin" 
-                        Format="dd/MM/yyyy" 
-                        Grid.Column="1" Grid.Row="1"/>
+                            Format="dd/MM/yyyy" 
+                            DateSelected="dtpck_checkin_DateSelected"
+                            Grid.Column="1" Grid.Row="1"/>
 
-                    
-                    
+
+
                     <Label Text="Check-out:" Style="{StaticResource label_contratacao_hospedagem}"
                            Grid.Column="0" Grid.Row="2"/>
+                    
                     <DatePicker x:Name="dtpck_checkout" 
                         Format="dd/MM/yyyy" 
                         Grid.Column="1" Grid.Row="2"/>
