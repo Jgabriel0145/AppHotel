@@ -1,12 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppHotel.View.HospedagemCalculada">
+             x:Class="AppHotel.View.HospedagemCalculada"
+             BackgroundColor="#8B4513">
     <ContentPage.Content>
+
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Detalhes da Estadia"/>
+            <Label Text="{Binding Path=QuartoEscolhido.Nome}"
+                   FontSize="Title"/>
+
+            <Frame BackgroundColor="#F5DEB3"
+                   CornerRadius="10"
+                   Margin="10, 0, 10, 10" Padding="20">
+
+                <StackLayout Orientation="Horizontal">
+
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+
+                                <Span Text="Adultos: "/>
+                                <Span Text="{Binding QtdCriancas}" TextColor="DarkRed"/>
+
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                </StackLayout>
+                
+            </Frame>
+
+
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

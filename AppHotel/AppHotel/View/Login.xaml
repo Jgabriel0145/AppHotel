@@ -20,7 +20,7 @@
                            FontAttributes="Bold"/>
 
 
-                    <Label Text="E-mail" FontSize="Medium" 
+                    <Label Text="E-mail:" FontSize="Medium" 
                            TextColor="Black"/>
                     <Entry x:Name="txt_email" Placeholder="Email..." 
                            ClearButtonVisibility="WhileEditing" Keyboard="Email"

@@ -55,13 +55,19 @@ namespace AppHotel.View
             }
             catch(Exception ex)
             {
-                DisplayAlert("", "", "");
+                DisplayAlert("Ops!", $"Erro {ex}", "OK");
             }
         }
 
-        private void btnSairCalculoHospedagem_Clicked(object sender, EventArgs e)
+        private async void btnSairCalculoHospedagem_Clicked(object sender, EventArgs e)
         {
+            bool confirme = await DisplayAlert("Tem certeza ?", "Deseja desconectar da sua conta ?", "Sim", "Não");
 
+            if (confirme)
+            {
+                App.Current.Properties.Remove("usuario_logado");
+                App.Current.MainPage = new Login();
+            }
         }
 
         private void dtpck_checkin_DateSelected(object sender, DateChangedEventArgs e)

@@ -15,6 +15,10 @@ namespace AppHotel.View
         public HospedagemCalculada()
         {
             InitializeComponent();
+
+            NavigationPage.SetHasNavigationBar(this, false);
         }
+
+
     }
 }
