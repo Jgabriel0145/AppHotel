@@ -45,7 +45,7 @@ namespace AppHotel
             if (Properties.ContainsKey("usuario_logado"))
                 MainPage = new NavigationPage(new View.ContratacaoHospedagem());
             else
-                MainPage = new NavigationPage(new View.Login());
+                MainPage = new View.Login();
         }
 
         protected override void OnStart()

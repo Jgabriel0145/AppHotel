@@ -34,7 +34,7 @@ namespace AppHotel.View
             if (usuario == usuario_correto && senha == senha_correta)
             {
                 App.Current.Properties.Add("usuario_logado", usuario);
-                App.Current.MainPage = new ContratacaoHospedagem();
+                App.Current.MainPage = new NavigationPage(new ContratacaoHospedagem());
             }
 
             else

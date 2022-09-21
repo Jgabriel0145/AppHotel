@@ -19,6 +19,9 @@ namespace AppHotel.View
             NavigationPage.SetHasNavigationBar(this, false);
         }
 
-
+        private void btnVoltar_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PopAsync();
+        }
     }
 }

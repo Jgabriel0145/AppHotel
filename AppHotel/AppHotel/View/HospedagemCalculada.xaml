@@ -6,8 +6,9 @@
     <ContentPage.Content>
 
         <StackLayout>
-            <Label Text="Detalhes da Estadia"/>
-            <Label Text="{Binding Path=QuartoEscolhido.Nome}"
+            <Label Text="Detalhes da Estadia" HorizontalOptions="Center" FontSize="Title"
+                   TextColor="White" Margin="5"/>
+            <Label Text="{Binding Path=QuartoEscolhido.Nome}" TextColor="White" HorizontalOptions="Center"
                    FontSize="Title"/>
 
             <Frame BackgroundColor="#F5DEB3"
@@ -15,14 +16,22 @@
                    Margin="10, 0, 10, 10" Padding="20">
 
                 <StackLayout Orientation="Horizontal">
-
+                    
                     <Label>
                         <Label.FormattedText>
                             <FormattedString>
+                                
+                                <Span Text="Adultos: " FontSize="20" TextColor="Black" />
+                                <Span Text="{Binding QtdAdultos}" FontSize="20" TextColor="Black" 
+                                          FontAttributes="Bold"/>
 
-                                <Span Text="Adultos: "/>
-                                <Span Text="{Binding QtdCriancas}" TextColor="DarkRed"/>
+                                <Span Text="
+                                      "/>
 
+                                <Span Text="Crianças: " FontSize="20" TextColor="Black" />
+                                <Span Text="{Binding QtdCriancas}" FontSize="20" TextColor="Black" 
+                                          FontAttributes="Bold"/>
+                                
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
@@ -30,6 +39,52 @@
                 </StackLayout>
                 
             </Frame>
+
+            <Frame BackgroundColor="#F5DEB3"
+                   CornerRadius="10"
+                   Margin="10, 0, 10, 10" Padding="20">
+
+                <Grid ColumnDefinitions="*, *, *" 
+                      RowDefinitions="*, *">
+
+                    <Label Grid.Row="0" Grid.Column="0" Text="Data CheckIn: " FontSize="15" TextColor="Black" />
+                    <Label Grid.Row="0" Grid.Column="1" Text="Data CheckOut: " FontSize="15" TextColor="Black" />
+                    <Label Grid.Row="0" Grid.Column="2" Text="Estadia: " FontSize="15" TextColor="Black" />
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="{Binding DataCheckin, StringFormat='{}{0:dd/MM/yyyy}'}" FontSize="15" TextColor="Black" 
+                                      FontAttributes="Bold"/>
+                    <Label Grid.Row="1" Grid.Column="1" Text="{Binding DataCheckout, StringFormat='{}{0:dd/MM/yyyy}' }" FontSize="15" TextColor="Black" 
+                                      FontAttributes="Bold"/>
+                    <Label Grid.Row="1" Grid.Column="2" Text="{Binding Estadia}" FontSize="15" TextColor="Black" 
+                                      FontAttributes="Bold"/>
+                    
+                </Grid>
+                
+                
+            </Frame>
+
+            <Frame BackgroundColor="#F5DEB3"
+                   CornerRadius="10"
+                   Margin="10, 0, 10, 10" Padding="20">
+
+
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+
+                            <Span Text="Valor da Hospedagem: " FontSize="20" TextColor="Black" />
+                            <Span Text="{Binding ValorTotal, StringFormat='{}{0:c}' }" FontSize="Title" TextColor="Black"
+                                  FontAttributes="Bold"/>
+                        
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                
+            </Frame>
+
+            <Button Text="Voltar" x:Name="btnVoltar" Clicked="btnVoltar_Clicked"
+                        BackgroundColor="#8B4513" CornerRadius="10" TextColor="White"
+                            BorderColor="Black" BorderWidth="1" Margin="10"/>
 
 
         </StackLayout>

@@ -43,19 +43,17 @@ namespace AppHotel.View
                 {
                     BindingContext = new Hospedagem()
                     {
-                        QtdAdultos = Convert.ToInt32(lbl_qtd_adultos),
-                        QtdCriancas = Convert.ToInt32(lbl_qtd_criancas),
+                        QtdAdultos = Convert.ToInt32(lbl_qtd_adultos.Text),
+                        QtdCriancas = Convert.ToInt32(lbl_qtd_criancas.Text),
                         QuartoEscolhido = (Suite)pck_suite.SelectedItem,
                         DataCheckin = dtpck_checkin.Date,
                         DataCheckout = dtpck_checkout.Date
                     }
-
-
-                }) ;
+                });
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                DisplayAlert("Ops!", $"Erro {ex}", "OK");
+                DisplayAlert("Ops", ex.Message, "OK");
             }
         }
 
