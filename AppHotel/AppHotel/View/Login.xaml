@@ -16,7 +16,7 @@
 
                     <Label Text="LOGIN HOTEL" FontSize="Title"
                            HorizontalTextAlignment="Center" 
-                           TextColor="Black"
+                           TextColor="WHite"
                            FontAttributes="Bold"/>
 
 
